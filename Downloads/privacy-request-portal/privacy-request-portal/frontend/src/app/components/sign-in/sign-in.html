@@ -1,0 +1,31 @@
+<div class="login-layout">
+  <section class="intro-panel">
+    <h2>Welcome Back</h2>
+    <p>
+      Use this portal to create, monitor, and administrate privacy requests.
+    </p>
+
+    <div class="hint-card">
+      <div><strong>User:</strong> user / user123</div>
+      <div><strong>Admin:</strong> admin / admin123</div>
+    </div>
+  </section>
+
+  <section class="form-panel">
+    <h3>Sign In</h3>
+
+    @if (loginError) {
+      <div class="error-box">{{ loginError }}</div>
+    }
+
+    <form [formGroup]="form" (ngSubmit)="submit()">
+      <label>Username</label>
+      <input type="text" formControlName="username" />
+
+      <label>Password</label>
+      <input type="password" formControlName="password" />
+
+      <button type="submit">Continue</button>
+    </form>
+  </section>
+</div>

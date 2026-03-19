@@ -1,0 +1,59 @@
+.login-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 24px;
+  max-width: 980px;
+  margin: 40px auto;
+}
+
+.intro-panel,
+.form-panel {
+  background: #fff;
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+.intro-panel {
+  background: linear-gradient(135deg, #1d4ed8, #2563eb);
+  color: #fff;
+}
+
+.hint-card {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 14px;
+  padding: 16px;
+  line-height: 1.8;
+}
+
+.form-panel form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.form-panel input {
+  padding: 12px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+}
+
+.form-panel button {
+  margin-top: 8px;
+  background: #1d4ed8;
+  color: #fff;
+  border: 0;
+  border-radius: 12px;
+  padding: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.error-box {
+  background: #fee2e2;
+  color: #991b1b;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 14px;
+}

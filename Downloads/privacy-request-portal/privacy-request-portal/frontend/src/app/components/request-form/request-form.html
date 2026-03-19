@@ -1,0 +1,30 @@
+<!-- Success Message -->
+@if (successMsg) {
+  <div class="success-banner">{{ successMsg }}</div>
+}
+
+<!-- Error Message -->
+@if (errorMsg) {
+  <div class="error-banner">{{ errorMsg }}</div>
+}
+
+<form [formGroup]="requestForm" (ngSubmit)="submitRequest()" class="request-grid">
+
+  <label>Customer Name</label>
+  <input type="text" formControlName="customerName" />
+
+  <label>Email Address</label>
+  <input type="email" formControlName="emailAddress" />
+
+  <label>Request Type</label>
+  <select formControlName="requestCategory">
+    <option value="ACCESS">Access</option>
+    <option value="DELETE">Delete</option>
+  </select>
+
+  <label>Notes</label>
+  <textarea formControlName="notes"></textarea>
+
+  <button type="submit">Submit Request</button>
+
+</form>

@@ -1,0 +1,45 @@
+<div class="board-card">
+  <div class="board-header">
+    <h2>Request Management</h2>
+    <p>Review and update all submitted privacy requests.</p>
+  </div>
+
+  @if (message) {
+    <div class="success-box">{{ message }}</div>
+  }
+
+  @if (errorMessage) {
+    <div class="error-box">{{ errorMessage }}</div>
+  }
+
+  @if (!errorMessage && requests.length === 0) {
+    <div class="empty-box">No requests found.</div>
+  }
+
+  <div class="admin-list">
+    @for (item of requests; track item.id) {
+      <div class="admin-item">
+        <div class="admin-item-top">
+          <div>
+            <h3>#{{ item.id }} - {{ item.customerName }}</h3>
+            <p>{{ item.emailAddress }}</p>
+          </div>
+          <span class="status-badge">{{ item.processingStatus }}</span>
+        </div>
+
+        <div class="meta-grid">
+          <div><strong>Type:</strong> {{ item.requestCategory }}</div>
+          <div><strong>Submitted By:</strong> {{ item.ownerUsername }}</div>
+        </div>
+
+        <p class="description">{{ item.notes }}</p>
+
+        <div class="action-row">
+          <button class="approve" (click)="update(item.id!, 'APPROVED')">Approve</button>
+          <button class="reject" (click)="update(item.id!, 'REJECTED')">Reject</button>
+          <button class="complete" (click)="update(item.id!, 'COMPLETED')">Complete</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

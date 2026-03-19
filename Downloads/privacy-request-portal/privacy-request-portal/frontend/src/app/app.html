@@ -1,0 +1,39 @@
+<div class="shell">
+  <header class="topbar">
+    <div>
+      <h1>Privacy Request Center</h1>
+      <p class="subtitle">Data access and deletion request tracking</p>
+    </div>
+
+    @if (session.isAuthenticated()) {
+      <div class="session-area">
+        <span class="role-pill">{{ session.currentRole() }}</span>
+        <button class="logout-btn" (click)="signOut()">Sign Out</button>
+      </div>
+    }
+  </header>
+
+  @if (session.isAuthenticated()) {
+    <div class="workspace">
+      <aside class="sidebar">
+        @if (session.currentRole() === 'USER') {
+          <a routerLink="/new-request" routerLinkActive="active-link">New Request</a>
+          <a routerLink="/my-submissions" routerLinkActive="active-link">My Submissions</a>
+        }
+
+        @if (session.currentRole() === 'ADMIN') {
+          <a routerLink="/management" routerLinkActive="active-link">Management</a>
+          <a routerLink="/activity-log" routerLinkActive="active-link">Activity Log</a>
+        }
+      </aside>
+
+      <main class="content-panel">
+        <router-outlet></router-outlet>
+      </main>
+    </div>
+  } @else {
+    <main class="auth-panel">
+      <router-outlet></router-outlet>
+    </main>
+  }
+</div>

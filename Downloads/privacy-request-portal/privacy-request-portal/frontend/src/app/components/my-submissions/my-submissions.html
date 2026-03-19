@@ -1,0 +1,26 @@
+<div class="section-card">
+  <h2>My Submissions</h2>
+
+  @if (errorMessage) {
+    <div class="error-box">{{ errorMessage }}</div>
+  }
+
+  @if (!errorMessage && requests.length === 0) {
+    <div class="empty-box">No requests available.</div>
+  }
+
+  <div class="request-list">
+    @for (item of requests; track item.id) {
+      <article class="request-tile">
+        <div class="request-head">
+          <h3>#{{ item.id }} - {{ item.requestCategory }}</h3>
+          <span class="status-pill">{{ item.processingStatus }}</span>
+        </div>
+
+        <p><strong>Name:</strong> {{ item.customerName }}</p>
+        <p><strong>Email:</strong> {{ item.emailAddress }}</p>
+        <p><strong>Description:</strong> {{ item.notes }}</p>
+      </article>
+    }
+  </div>
+</div>

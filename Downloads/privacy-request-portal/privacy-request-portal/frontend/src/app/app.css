@@ -1,0 +1,82 @@
+.shell {
+  min-height: 100vh;
+  background: linear-gradient(180deg, #f7f9fc 0%, #edf2f7 100%);
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: #132238;
+  color: #fff;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.subtitle {
+  margin: 6px 0 0;
+  color: #d0d9e6;
+  font-size: 14px;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: calc(100vh - 96px);
+}
+
+.sidebar {
+  background: #fff;
+  border-right: 1px solid #e2e8f0;
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #1e293b;
+  padding: 12px 14px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.sidebar a:hover,
+.active-link {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.content-panel,
+.auth-panel {
+  padding: 28px;
+}
+
+.session-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.role-pill {
+  background: #1d4ed8;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.logout-btn {
+  border: 0;
+  background: #fff;
+  color: #132238;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 600;
+  cursor: pointer;
+}

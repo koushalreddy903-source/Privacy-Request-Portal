@@ -1,0 +1,28 @@
+<div class="timeline-card">
+  <h2>Activity Log</h2>
+
+  @if (errorMessage) {
+    <div class="error-banner">{{ errorMessage }}</div>
+  }
+
+  @if (!errorMessage && entries.length === 0) {
+    <div class="empty-banner">No activity records found.</div>
+  }
+
+  <div class="timeline">
+    @for (entry of entries; track entry.id) {
+      <div class="timeline-item">
+        <div class="dot"></div>
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <strong>{{ entry.eventName }}</strong>
+            <span>{{ entry.eventTime }}</span>
+          </div>
+          <p><strong>Actor:</strong> {{ entry.actor }}</p>
+          <p><strong>Request ID:</strong> {{ entry.linkedRequestId }}</p>
+          <p>{{ entry.detailMessage }}</p>
+        </div>
+      </div>
+    }
+  </div>
+</div>
